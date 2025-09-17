@@ -1,42 +1,88 @@
 import './global.css'
 import type { Metadata } from 'next'
-import { GeistSans } from 'geist/font/sans'
-import { GeistMono } from 'geist/font/mono'
 import { Navbar } from './components/nav'
 import { Analytics } from '@vercel/analytics/react'
 import { SpeedInsights } from '@vercel/speed-insights/next'
 import Footer from './components/footer'
+import { StructuredData } from './components/StructuredData'
+import { SkipLinks } from './components/SkipLinks'
+import { ErrorBoundary } from './components/ErrorBoundary'
 import { baseUrl } from './sitemap'
 
 export const metadata: Metadata = {
   metadataBase: new URL(baseUrl),
   title: {
-    default: 'Next.js Portfolio Starter',
-    template: '%s | Next.js Portfolio Starter',
+    default: 'Görkem Özkan - Full-Stack Frontend & Mobile Developer',
+    template: '%s | Görkem Özkan',
   },
-  description: 'This is my portfolio.',
-  openGraph: {
-    title: 'My Portfolio',
-    description: 'This is my portfolio.',
-    url: baseUrl,
-    siteName: 'My Portfolio',
-    locale: 'en_US',
-    type: 'website',
+  description: 'Full-stack developer with 5+ years of experience in React Native, Expo, TypeScript, React, Vue, Angular, and Supabase. Building performant web apps and cross-platform mobile applications with expertise in full-stack development, real-time databases, authentication, and user experience.',
+  keywords: ['Full-Stack Developer', 'React Native', 'Expo', 'Supabase', 'PostgreSQL', 'Mobile Development', 'React', 'TypeScript', 'Vue', 'Angular', 'Next.js', 'Web Development', 'SSR', 'SPA', 'Cross-platform', 'iOS', 'Android', 'Backend', 'Database', 'Real-time'],
+  authors: [{ name: 'Görkem Özkan', url: 'https://ozgorkem.com' }],
+  creator: 'Görkem Özkan',
+  publisher: 'Görkem Özkan',
+  formatDetection: {
+    email: false,
+    address: false,
+    telephone: false,
+  },
+  alternates: {
+    canonical: baseUrl,
   },
   robots: {
     index: true,
     follow: true,
+    nocache: false,
     googleBot: {
       index: true,
       follow: true,
+      noimageindex: false,
       'max-video-preview': -1,
       'max-image-preview': 'large',
       'max-snippet': -1,
     },
   },
+  openGraph: {
+    title: 'Görkem Özkan - Full-Stack Frontend & Mobile Developer',
+    description: 'Full-stack developer with 5+ years of experience in React Native, Expo, TypeScript, React, Vue, Angular, and Supabase. Building performant web apps and cross-platform mobile applications with expertise in full-stack development, real-time databases, authentication, and user experience.',
+    url: baseUrl,
+    siteName: 'Görkem Özkan Portfolio',
+    locale: 'en_US',
+    type: 'website',
+    images: [
+      {
+        url: `${baseUrl}/og-image.png`,
+        width: 1200,
+        height: 630,
+        alt: 'Görkem Özkan - Full-Stack Developer Portfolio',
+      },
+    ],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Görkem Özkan - Full-Stack Frontend & Mobile Developer',
+    description: 'Full-stack developer with 5+ years of experience in React Native, Expo, TypeScript, React, Vue, Angular, and Supabase.',
+    creator: '@ozgorkem',
+    images: [`${baseUrl}/og-image.png`],
+  },
+  other: {
+    'theme-color': '#000000',
+    'color-scheme': 'light dark',
+    'msapplication-TileColor': '#000000',
+    'apple-mobile-web-app-capable': 'yes',
+    'apple-mobile-web-app-status-bar-style': 'default',
+    'apple-mobile-web-app-title': 'Görkem Özkan',
+    // PWA Manifest
+    'manifest': '/manifest.json',
+  },
 }
 
 const cx = (...classes) => classes.filter(Boolean).join(' ')
+
+export const viewport = {
+  width: 'device-width',
+  initialScale: 1,
+  maximumScale: 5,
+}
 
 export default function RootLayout({
   children,
@@ -47,19 +93,48 @@ export default function RootLayout({
     <html
       lang="en"
       className={cx(
-        'text-black bg-white dark:text-white dark:bg-black',
-        GeistSans.variable,
-        GeistMono.variable
-      )}
+        'text-black bg-white dark:text-white dark:bg-black')}
     >
+      <head>
+        <StructuredData />
+      </head>
       <body className="antialiased max-w-xl mx-4 mt-8 lg:mx-auto">
-        <main className="flex-auto min-w-0 mt-6 flex flex-col px-2 md:px-0">
+        <SkipLinks />
+        <header>
           <Navbar />
-          {children}
-          <Footer />
-          <Analytics />
-          <SpeedInsights />
+        </header>
+        <main
+          id="main-content"
+          className="flex-auto min-w-0 mt-6 flex flex-col px-2 md:px-0"
+          role="main"
+          aria-label="Main content"
+        >
+          <ErrorBoundary>
+            {children}
+          </ErrorBoundary>
         </main>
+        <Footer />
+        <Analytics />
+        <SpeedInsights />
+
+        {/* Register Service Worker */}
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+              if ('serviceWorker' in navigator) {
+                window.addEventListener('load', function() {
+                  navigator.serviceWorker.register('/sw.js')
+                    .then(function(registration) {
+                      console.log('SW registered: ', registration);
+                    })
+                    .catch(function(registrationError) {
+                      console.log('SW registration failed: ', registrationError);
+                    });
+                });
+              }
+            `,
+          }}
+        />
       </body>
     </html>
   )
