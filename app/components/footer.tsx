@@ -22,7 +22,6 @@ export default function Footer() {
         <h3 className="text-lg font-semibold mb-4">Get in Touch</h3>
         <div className="space-y-2 text-sm text-neutral-600 dark:text-neutral-400">
           <p>📧 developer@ozgorkem.com</p>
-          <p>🌐 ozgorkem.com</p>
         </div>
       </div>
 
