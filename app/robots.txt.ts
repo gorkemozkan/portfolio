@@ -17,15 +17,19 @@ Allow: /
 User-agent: DuckDuckBot
 Allow: /
 
-# Block access to sensitive areas
-Disallow: /api/
+User-agent: Baiduspider
+Allow: /
+
+User-agent: YandexBot
+Allow: /
+
+# Block access to Next.js internal files
 Disallow: /_next/
-Disallow: /admin/
 
 # Sitemap
 Sitemap: ${baseUrl}/sitemap.xml
 
-# Crawl delay (optional)
+# Crawl delay (respectful crawling for small portfolio site)
 Crawl-delay: 1`
 
   return new Response(robots, {
