@@ -6,7 +6,7 @@ export function StructuredData() {
     "@type": "Person",
     "name": "Görkem Özkan",
     "jobTitle": "Full-Stack Frontend & Mobile Developer",
-    "description": "Full-stack developer with 5+ years of experience in React Native, Expo, TypeScript, React, Vue, Angular, and Supabase. Building performant web apps and cross-platform mobile applications.",
+    "description": "Full-stack developer with 5+ years of experience in React Native, Expo, TypeScript, React, Vue, and Supabase. Building performant web apps and cross-platform mobile applications.",
     "url": baseUrl,
     "sameAs": [
       "https://github.com/ozgorkem",

@@ -15,8 +15,8 @@ export const metadata: Metadata = {
     default: 'Görkem Özkan - Full-Stack Frontend & Mobile Developer',
     template: '%s | Görkem Özkan',
   },
-  description: 'Full-stack developer with 5+ years of experience in React Native, Expo, TypeScript, React, Vue, Angular, and Supabase. Building performant web apps and cross-platform mobile applications with expertise in full-stack development, real-time databases, authentication, and user experience.',
-  keywords: ['Full-Stack Developer', 'React Native', 'Expo', 'Supabase', 'PostgreSQL', 'Mobile Development', 'React', 'TypeScript', 'Vue', 'Angular', 'Next.js', 'Web Development', 'SSR', 'SPA', 'Cross-platform', 'iOS', 'Android', 'Backend', 'Database', 'Real-time'],
+  description: 'Full-stack developer with 5+ years of experience in React Native, Expo, TypeScript, React, Vue, and Supabase. Building performant web apps and cross-platform mobile applications with expertise in full-stack development, real-time databases, authentication, and user experience.',
+  keywords: ['Full-Stack Developer', 'React Native', 'Expo', 'Supabase', 'PostgreSQL', 'Mobile Development', 'React', 'TypeScript', 'Vue', 'Next.js', 'Web Development', 'SSR', 'SPA', 'Cross-platform', 'iOS', 'Android', 'Backend', 'Database', 'Real-time'],
   authors: [{ name: 'Görkem Özkan', url: 'https://ozgorkem.com' }],
   creator: 'Görkem Özkan',
   publisher: 'Görkem Özkan',
@@ -43,7 +43,7 @@ export const metadata: Metadata = {
   },
   openGraph: {
     title: 'Görkem Özkan - Full-Stack Frontend & Mobile Developer',
-    description: 'Full-stack developer with 5+ years of experience in React Native, Expo, TypeScript, React, Vue, Angular, and Supabase. Building performant web apps and cross-platform mobile applications with expertise in full-stack development, real-time databases, authentication, and user experience.',
+    description: 'Full-stack developer with 5+ years of experience in React Native, Expo, TypeScript, React, Vue, and Supabase. Building performant web apps and cross-platform mobile applications with expertise in full-stack development, real-time databases, authentication, and user experience.',
     url: baseUrl,
     siteName: 'Görkem Özkan Portfolio',
     locale: 'en_US',
@@ -60,7 +60,7 @@ export const metadata: Metadata = {
   twitter: {
     card: 'summary_large_image',
     title: 'Görkem Özkan - Full-Stack Frontend & Mobile Developer',
-    description: 'Full-stack developer with 5+ years of experience in React Native, Expo, TypeScript, React, Vue, Angular, and Supabase.',
+    description: 'Full-stack developer with 5+ years of experience in React Native, Expo, TypeScript, React, Vue, and Supabase.',
     creator: '@ozgorkem',
     images: [`${baseUrl}/og-image.png`],
   },

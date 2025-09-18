@@ -9,7 +9,7 @@ export function SkillsSection() {
         </div>
         <div>
           <h3 className="font-medium mb-2 text-neutral-700 dark:text-neutral-300">Web Frameworks</h3>
-          <p className="text-neutral-600 dark:text-neutral-400">Angular, React, Vue, Next.js, Nuxt.js, Remix, Astro (SSR/SSG & SPA)</p>
+          <p className="text-neutral-600 dark:text-neutral-400"> React, Vue, Next.js, Nuxt.js, Remix, Astro (SSR/SSG & SPA)</p>
         </div>
         <div>
           <h3 className="font-medium mb-2 text-neutral-700 dark:text-neutral-300">Mobile Development</h3>
