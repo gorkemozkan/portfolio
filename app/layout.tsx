@@ -1,8 +1,6 @@
 import './global.css'
 import type { Metadata } from 'next'
 import { Navbar } from './components/nav'
-import { Analytics } from '@vercel/analytics/react'
-import { SpeedInsights } from '@vercel/speed-insights/next'
 import Footer from './components/footer'
 import { StructuredData } from './components/StructuredData'
 import { SkipLinks } from './components/SkipLinks'
@@ -128,10 +126,6 @@ export default function RootLayout({
           </ErrorBoundary>
         </main>
         <Footer />
-        <Analytics />
-        <SpeedInsights />
-
-        {/* Register Service Worker */}
         <script
           dangerouslySetInnerHTML={{
             __html: `
@@ -139,10 +133,10 @@ export default function RootLayout({
                 window.addEventListener('load', function() {
                   navigator.serviceWorker.register('/sw.js')
                     .then(function(registration) {
-                      console.log('SW registered: ', registration);
+                      // console.log('SW registered: ', registration);
                     })
                     .catch(function(registrationError) {
-                      console.log('SW registration failed: ', registrationError);
+                      //console.log('SW registration failed: ', registrationError);
                     });
                 });
               }
