@@ -15,8 +15,7 @@ export function HeroSection() {
           and performance optimization.
         </p>
         <p className="text-neutral-800 dark:text-neutral-200 leading-relaxed">
-          Strong backend expertise with Supabase, PostgreSQL, and real-time database solutions. Proficient in
-          authentication, API design, and full-stack application architecture. Strong foundation in the full web stack—HTTP/HTTPS,
+          Proficient in authentication, API design, and full-stack application architecture. Strong foundation in the full web stack—HTTP/HTTPS,
           REST APIs, GraphQL, CORS, CSP, OAuth—with mobile-first development mindset.
         </p>
         <p className="text-neutral-800 dark:text-neutral-200 leading-relaxed">
