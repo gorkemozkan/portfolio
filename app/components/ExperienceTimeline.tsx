@@ -12,7 +12,7 @@ interface Experience {
 
 const experiences: Experience[] = [
   {
-    company: 'Pr Yazılım',
+    company: 'PR Yazılım',
     role: 'Software Developer',
     period: 'January 2024 - August 2025 (1 year 8 months)',
     location: 'İzmir, Türkiye',
