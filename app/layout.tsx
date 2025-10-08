@@ -81,11 +81,6 @@ export const metadata: Metadata = {
     'theme-color': '#000000',
     'color-scheme': 'light dark',
     'msapplication-TileColor': '#000000',
-    'mobile-web-app-capable': 'yes',
-    'apple-mobile-web-app-status-bar-style': 'default',
-    'apple-mobile-web-app-title': 'Görkem Özkan',
-    // PWA Manifest
-    'manifest': '/manifest.json',
   },
 }
 
@@ -127,23 +122,6 @@ export default function RootLayout({
           </ErrorBoundary>
         </main>
         <Footer />
-        <script
-          dangerouslySetInnerHTML={{
-            __html: `
-              if ('serviceWorker' in navigator) {
-                window.addEventListener('load', function() {
-                  navigator.serviceWorker.register('/sw.js')
-                    .then(function(registration) {
-                      // console.log('SW registered: ', registration);
-                    })
-                    .catch(function(registrationError) {
-                      //console.log('SW registration failed: ', registrationError);
-                    });
-                });
-              }
-            `,
-          }}
-        />
       </body>
     </html>
   )

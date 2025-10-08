@@ -1,6 +1,8 @@
 import { baseUrl } from '../sitemap'
+import { getAllPosts } from '@/lib/blog/mdx'
 
 export function StructuredData() {
+  const posts = getAllPosts()
   const personSchema = {
     "@context": "https://schema.org",
     "@type": "Person",
@@ -77,6 +79,37 @@ export function StructuredData() {
     }
   }
 
+  const blogSchema = posts.length > 0 ? {
+    "@context": "https://schema.org",
+    "@type": "Blog",
+    "name": "Görkem Özkan's Blog",
+    "description": "Articles about web development, mobile development, JavaScript, TypeScript, and software engineering best practices.",
+    "url": `${baseUrl}/blog`,
+    "author": {
+      "@type": "Person",
+      "name": "Görkem Özkan"
+    },
+    "blogPost": posts.map(post => ({
+      "@type": "BlogPosting",
+      "headline": post.title,
+      "description": post.description,
+      "url": `${baseUrl}/blog/${post.slug}`,
+      "datePublished": post.date,
+      "dateModified": post.date,
+      "author": {
+        "@type": "Person",
+        "name": post.author || "Görkem Özkan"
+      },
+      "publisher": {
+        "@type": "Person",
+        "name": "Görkem Özkan"
+      },
+      "keywords": post.tags?.join(', ') || '',
+      "articleSection": "Technology",
+      "inLanguage": "en-US"
+    }))
+  } : null
+
   return (
     <>
       <script
@@ -97,6 +130,14 @@ export function StructuredData() {
           __html: JSON.stringify(websiteSchema)
         }}
       />
+      {blogSchema && (
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify(blogSchema)
+          }}
+        />
+      )}
     </>
   )
 }
