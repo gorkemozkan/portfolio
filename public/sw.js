@@ -1,5 +1,5 @@
 
-const CACHE_NAME = 'gorkem-ozkan-portfolio-v1'
+const CACHE_NAME = 'gorkem-ozkan-portfolio-v2'
 
 const urlsToCache = [
   '/',
