@@ -13,6 +13,8 @@ export function BlogPostContent({ source }: BlogPostContentProps) {
   const [mounted, setMounted] = useState(false)
 
   useEffect(() => {
+    window.scrollTo({ top: 0, behavior: 'smooth' })
+    
     import('next-mdx-remote').then((mod) => {
       setMDXRemote(() => mod.MDXRemote)
       setMounted(true)
