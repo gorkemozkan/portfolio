@@ -1,4 +1,5 @@
 import './global.css'
+import 'prismjs/themes/prism-tomorrow.css'
 import type { Metadata } from 'next'
 import { Navbar } from './components/nav'
 import Footer from './components/footer'
