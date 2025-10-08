@@ -17,11 +17,11 @@ export function SkillsSection() {
     },
     {
       title: "UI & State Management",
-      description: "Tailwind CSS, Material UI, Vuetify, Ant Design, Context API, Zustand, Pinia, Redux"
+      description: "Tailwind CSS, MUI, Vuetify, Ant Design, Context API, Zustand, Pinia, Redux"
     },
         {
       title: "Architecture & Practices",
-      description: "Performance Optimization, SEO, WCAG Accessibility, Cross-platform Development"
+      description: "Performance Optimization, SEO, Accessibility, Cross-Platform Development"
     },
     {
       title: "Web Frameworks",
