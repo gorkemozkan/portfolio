@@ -1,13 +1,14 @@
 export function HeroSection() {
   return (
     <>
-      <h1 className="mb-8 text-2xl font-semibold tracking-tighter">
+      <h1 className="mb-8 text-3xl lg:text-4xl font-bold ">
         GÖRKEM ÖZKAN
       </h1>
       <div className="mb-8 space-y-4">
         <p className="text-neutral-800 dark:text-neutral-200 leading-relaxed">
-          Software developer focused on building SSR/SPA web applications and cross-platform mobile apps. 
-          Skilled in React Native with Expo, TypeScript, React/Vue frameworks, component-based development, responsive design, accessibility, cross-platform compatibility, and performance optimization.
+          Software Developer focused on building web and mobile applications. 
+          Experienced in creating component-driven interfaces with attention to performance, accessibility, and responsive design. 
+         
         </p>
       </div>
     </>
