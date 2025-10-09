@@ -12,7 +12,7 @@ export function HobbiesSection() {
       title: "Music",
       icon: "🎵",
       description: "I play several instruments and have studied Turkish folk and classical music, explored harmony, and even taught music during university.",
-      tags: ["Baglama", "Violin", "Turkish Folk Music", "Classical Music"]
+      tags: ["Turkish Folk Music", "Classical Music"]
     },
     {
       title: "Running",
