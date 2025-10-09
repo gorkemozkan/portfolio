@@ -38,7 +38,7 @@ const experiences: Experience[] = [
     image: 'https://media.licdn.com/dms/image/v2/C4D0BAQFYiXKbprZV2g/company-logo_200_200/company-logo_200_200/0/1669880715115/storespy_logo?e=1762992000&v=beta&t=Bxw56Vrl27lFA03QhNgrVFUiI3YRsOqLTI_ujU16zS0'
   },
   {
-    company: 'Nerasocial',
+    company: 'Nera Social',
     role: 'Software Developer',
     period: 'July 2020 - June 2021 (1 year)',
     location: 'İzmir, Türkiye',
@@ -46,7 +46,7 @@ const experiences: Experience[] = [
     image: 'https://media.licdn.com/dms/image/v2/D4D0BAQEdms-vd4d9Xw/company-logo_200_200/company-logo_200_200/0/1735633721177/neramarketingagency_logo?e=1762992000&v=beta&t=HUnYwn3ZB--JDYKbdUJ7vNIUZV0NoE8XrKymTd5CRiw'
   },
   {
-    company: 'KOROZO GROUP',
+    company: 'Korozo Group',
     role: 'IT Intern',
     period: 'September 2015 - June 2016 (10 months)',
     location: 'İzmir, Türkiye',
