@@ -1,5 +1,6 @@
 import Link from 'next/link'
 import { getAllPosts, BlogPostMetadata } from '@/lib/blog/mdx'
+import SectionTitle from './SectionTitle'
 
 export function BlogPosts() {
   const posts = getAllPosts().slice(0, 3)
@@ -9,26 +10,8 @@ export function BlogPosts() {
   }
 
   return (
-    <section 
-      className="my-8"
-      aria-labelledby="recent-posts-heading"
-    >
-      <div className="flex items-center justify-between mb-6">
-        <h2 
-          id="recent-posts-heading"
-          className="text-2xl font-bold tracking-tight text-neutral-900 dark:text-neutral-100"
-        >
-          Recent Posts
-        </h2>
-        <Link
-          href="/blog"
-          className="text-sm font-medium text-neutral-600 dark:text-neutral-400 hover:text-neutral-900 dark:hover:text-neutral-100 transition-colors"
-          aria-label="View all blog posts"
-        >
-          View all →
-        </Link>
-      </div>
-
+    <section aria-labelledby="recent-posts-heading">
+      <SectionTitle title="Recent Posts" />
       <div className="space-y-4">
         {posts.map((post) => (
           <BlogPostCard key={post.slug} post={post} />

@@ -2,6 +2,7 @@
 
 import { useState } from 'react'
 import Image from 'next/image'
+import SectionTitle from './SectionTitle'
 
 interface Experience {
   company: string
@@ -59,8 +60,8 @@ export function ExperienceTimeline() {
   const [expandedIndex, setExpandedIndex] = useState<number | null>(0)
 
   return (
-    <div className="mb-8">
-      <h2 className="text-xl font-semibold mb-6">Experiences</h2>
+    <div >
+      <SectionTitle title="Experiences" />
       <div className="relative">
         <div className="absolute left-[7px] top-3 bottom-3 w-[2px] bg-gradient-to-b from-neutral-300 via-neutral-200 to-neutral-100 dark:from-neutral-700 dark:via-neutral-800 dark:to-neutral-900" />
         <div className="space-y-6">

@@ -1,5 +1,7 @@
 'use client'
 
+import SectionTitle from "./SectionTitle"
+
 export function HobbiesSection() {
   const hobbies = [
     {
@@ -23,11 +25,8 @@ export function HobbiesSection() {
   ]
 
   return (
-    <div className="mb-10">
-      <h2 className="text-xl font-semibold text-neutral-900 dark:text-neutral-100 mb-5">
-        Beyond Code
-      </h2>
-      
+    <div>
+      <SectionTitle title="Beyond Code" />
       <div className="grid grid-cols-1 gap-5">
         {hobbies.map((hobby, index) => (
           <div

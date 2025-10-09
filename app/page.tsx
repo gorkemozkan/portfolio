@@ -6,11 +6,11 @@ import { HobbiesSection } from './components/HobbiesSection'
 
 export default function Page() {
   return (
-    <>
+    <div className="space-y-8">
       <HeroSection />
       <ExperienceTimeline />
       <BlogPosts />
       <HobbiesSection />
-    </>
+    </div>
   )
 }
