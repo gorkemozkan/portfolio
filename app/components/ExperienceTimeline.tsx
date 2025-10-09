@@ -67,7 +67,14 @@ export function ExperienceTimeline() {
           {experiences.map((exp, index) => {
             const isFirst  = index === 0
             return (
-            <div key={index} className="relative pl-8 group">
+            <div 
+              key={index} 
+              className="relative pl-8 group opacity-0 animate-fadeInUp"
+              style={{ 
+                animationDelay: `${index * 150}ms`,
+                animationFillMode: 'forwards'
+              }}
+            >
               <div className={`absolute left-0 top-2 w-4 h-4 rounded-full transition-all duration-300 group-hover:scale-125 group-hover:shadow-lg ${
                 isFirst 
                   ? 'bg-gradient-to-br from-blue-400 to-blue-600 dark:from-blue-500 dark:to-blue-700 border-2 border-blue-500 dark:border-blue-400 shadow-xl shadow-blue-500/50 animate-pulse group-hover:shadow-blue-500/70' 
