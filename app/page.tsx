@@ -9,7 +9,6 @@ export default function Page() {
     <>
       <HeroSection />
       <ExperienceTimeline />
-      <SkillsSection />
       <BlogPosts />
       <HobbiesSection />
     </>
