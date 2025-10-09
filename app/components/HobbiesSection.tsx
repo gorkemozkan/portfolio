@@ -14,6 +14,12 @@ export function HobbiesSection() {
       description: "I play several instruments and have studied Turkish folk and classical music, explored harmony, and even taught music during university.",
       tags: ["Baglama", "Violin", "Turkish Folk Music", "Classical Music"]
     },
+    {
+      title: "Running",
+      icon: "🏃",
+      description: "Passionate about running and staying active, enjoying the mental clarity and physical challenge it brings.",
+      tags: ["Fitness", "Endurance", "Outdoor Activities"]
+    },
   ]
 
   return (
