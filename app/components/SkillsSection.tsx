@@ -7,60 +7,64 @@ export function SkillsSection() {
 
   const allSkills = [
     {
-      title: "Languages & Fundamentals",
-      description: "TypeScript, JavaScript, HTML5, CSS3"
-    },
-
-    {
-      title: "Mobile Development",
-      description: "React Native, Expo, React Native CLI"
+      category: "Languages & Fundamentals",
+      skills: ["TypeScript", "JavaScript", "HTML5", "CSS3"]
     },
     {
-      title: "UI & State Management",
-      description: "Tailwind CSS, MUI, Vuetify, Ant Design, Context API, Zustand, Pinia, Redux"
-    },
-        {
-      title: "Architecture & Practices",
-      description: "Performance Optimization, SEO, Accessibility, Cross-Platform Development"
+      category: "Web Frameworks",
+      skills: ["React", "Vue", "Next.js", "Nuxt.js", "Astro"]
     },
     {
-      title: "Web Frameworks",
-      description: "React, Vue, Next.js, Nuxt.js, Remix, Astro"
-    },
-
-    {
-      title: "Backend & Database",
-      description: "Supabase, PostgreSQL, REST APIs, GraphQL, Authentication"
+      category: "Mobile Development",
+      skills: ["React Native", "Expo", "React Native CLI"]
     },
     {
-      title: "DevOps & Tools",
-      description: "Git Flow, Docker, Node.js, Vercel"
-    },
-        {
-      title: "Testing & Quality",
-      description: "Jest, Vitest, E2E Testing, CI/CD"
+      category: "UI Libraries",
+      skills: ["Tailwind CSS", "MUI", "Vuetify", "Ant"]
     },
     {
-      title: "Platforms & Deployment",
-      description: "App Store, Google Play, TestFlight, CodePush, EAS Build"
+      category: "State Management",
+      skills: ["Context API", "Zustand", "Pinia", "Redux"]
+    },
+    {
+      category: "Backend & Database",
+      skills: ["Supabase", "PostgreSQL", "GraphQL"]
+    },
+    {
+      category: "DevOps & Tools",
+      skills: ["Docker", "Node.js"]
+    },
+    {
+      category: "Testing & Quality",
+      skills: ["Jest", "Vitest", "E2E Testing"]
+    },
+    {
+      category: "Architecture & Practices",
+      skills: ["Performance Optimization", "SEO", "Accessibility", "Cross-Platform Development"]
+    },
+    {
+      category: "Platforms & Deployment",
+      skills: ["App Store", "Google Play", "TestFlight", "CodePush", "EAS Build"]
     },
   ]
 
   const displayedSkills = isExpanded ? allSkills : allSkills.slice(0, 4)
 
   return (
-    <div className="mb-8">
-      <div className="flex items-center justify-between mb-4">
-        <h2 className="text-xl font-semibold">Core Skills</h2>
+    <div className="mb-10">
+      <div className="flex items-center justify-between mb-5">
+        <h2 className="text-xl font-semibold text-neutral-900 dark:text-neutral-100">
+          Core Skills
+        </h2>
         <button
           onClick={() => setIsExpanded(!isExpanded)}
-          className="text-sm font-medium text-neutral-600 dark:text-neutral-400 hover:text-neutral-900 dark:hover:text-neutral-100 transition-colors flex items-center gap-1.5 group"
+          className="text-sm text-neutral-600 dark:text-neutral-400 hover:text-neutral-900 dark:hover:text-neutral-100 transition-colors flex items-center gap-1.5"
           aria-expanded={isExpanded}
           aria-label={isExpanded ? "Show fewer skills" : "Show all skills"}
         >
           <span>{isExpanded ? "Show Less" : "Show All"}</span>
           <svg
-            className={`w-4 h-4 transition-transform duration-300 ${isExpanded ? 'rotate-180' : ''}`}
+            className={`w-4 h-4 transition-transform duration-200 ${isExpanded ? 'rotate-180' : ''}`}
             fill="none"
             viewBox="0 0 24 24"
             stroke="currentColor"
@@ -70,30 +74,27 @@ export function SkillsSection() {
         </button>
       </div>
       
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-4 text-sm">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
         {displayedSkills.map((skill, index) => (
           <div
             key={index}
-            className="animate-in fade-in slide-in-from-top-2 duration-300"
-            style={{ animationDelay: `${index * 50}ms` }}
+            className="p-4 rounded-lg border border-neutral-200 dark:border-neutral-800 hover:border-neutral-300 dark:hover:border-neutral-700 transition-colors"
           >
-            <h3 className="font-medium mb-2 text-neutral-700 dark:text-neutral-300">
-              {skill.title}
+            <h3 className="font-medium text-neutral-900 dark:text-neutral-100 mb-2.5">
+              {skill.category}
             </h3>
-            <p className="text-neutral-600 dark:text-neutral-400">
-              {skill.description}
+            <p className="text-sm text-neutral-600 dark:text-neutral-400 leading-relaxed">
+              {skill.skills.join(", ")}
             </p>
           </div>
         ))}
       </div>
 
       {!isExpanded && (
-        <div className="mt-4 text-center">
-          <div className="inline-flex items-center gap-2 text-sm text-neutral-500 dark:text-neutral-500">
-            <div className="h-px w-12 bg-gradient-to-r from-transparent to-neutral-300 dark:to-neutral-700"></div>
-            <span>{allSkills.length - 4} more skills</span>
-            <div className="h-px w-12 bg-gradient-to-l from-transparent to-neutral-300 dark:to-neutral-700"></div>
-          </div>
+        <div className="mt-5 text-center">
+          <span className="text-sm text-neutral-500 dark:text-neutral-500">
+            {allSkills.length - 4} more categories
+          </span>
         </div>
       )}
     </div>

@@ -1,7 +1,7 @@
 export function HeroSection() {
   return (
     <>
-      <h1 className="mb-8 text-3xl lg:text-4xl font-bold ">
+      <h1 className="mb-8 text-2xl lg:text-3xl font-bold ">
         GÖRKEM ÖZKAN
       </h1>
       <div className="mb-8 space-y-4">
