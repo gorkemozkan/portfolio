@@ -1,7 +1,7 @@
 'use client'
 
 import { useState } from 'react'
-import Image from 'next/image'
+import { OptimizedImage } from './OptimizedImage'
 import SectionTitle from './SectionTitle'
 
 interface Experience {
@@ -90,7 +90,7 @@ export function ExperienceTimeline() {
                 className={`rounded-lg p-4 border transition-all duration-300 hover:shadow-lg relative overflow-hidden ${
                   isFirst 
                     ? 'bg-gradient-to-br from-blue-50 via-indigo-50/50 to-purple-50/30 dark:from-blue-950/30 dark:via-indigo-950/20 dark:to-purple-950/10 border-blue-400 dark:border-blue-700 hover:border-blue-500 dark:hover:border-blue-600 shadow-xl shadow-blue-500/20 hover:shadow-2xl hover:shadow-blue-500/30' 
-                    : 'bg-neutral-50 dark:bg-neutral-900 border-neutral-200 dark:border-neutral-800 hover:border-neutral-300 dark:hover:border-neutral-700'
+                    : 'bg-neutral-50 dark:bg-neutral-900 border-neutral-100 dark:border-neutral-800 hover:border-neutral-100 dark:hover:border-neutral-700'
                 } ${exp.description.length > 0 ? 'hover:border-neutral-500 hover:shadow-neutral-500/20 cursor-pointer' : ''}`}
                 onClick={() => setExpandedIndex(expandedIndex === index ? null : index)}
               >
@@ -99,12 +99,13 @@ export function ExperienceTimeline() {
                   <div className="flex items-start gap-3">
                     {exp.image && (
                       <div className="flex-shrink-0 w-12 h-12 relative">
-                        <Image
+                        <OptimizedImage
                           src={exp.image}
                           alt={`${exp.company} logo`}
                           width={48}
                           height={48}
                           className="rounded-lg object-cover"
+                          hideOnError
                         />
                       </div>
                     )}

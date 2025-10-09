@@ -1,4 +1,5 @@
 import { ReactNode } from 'react'
+import { OptimizedImage } from './OptimizedImage'
 
 type HeadingProps = {
   children?: ReactNode
@@ -107,14 +108,20 @@ const Em = ({ children }: { children?: ReactNode }) => (
   <em className="italic">{children}</em>
 )
 
-const Img = ({ src, alt }: { src?: string; alt?: string }) => (
-  <img
-    src={src}
-    alt={alt}
-    className="rounded-lg my-6 w-full"
-    loading="lazy"
-  />
-)
+const Img = ({ src, alt }: { src?: string; alt?: string }) => {
+  if (!src) return null
+  
+  return (
+    <OptimizedImage
+      src={src}
+      alt={alt || ''}
+      width={800}
+      height={600}
+      className="rounded-lg my-6 w-full h-auto"
+      hideOnError
+    />
+  )
+}
 
 export const MDXComponents = {
   h1: H1,
