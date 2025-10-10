@@ -8,19 +8,16 @@ export function HobbiesSection() {
       title: "Cars & Motorsport",
       icon: "🏎️",
       description: "Enthusiast of cars and motorsports, fascinated by the mechanics, performance, and emotion behind every drive.",
-      tags: ["Petrolhead", "Automotive Engineering"]
     },
     {
       title: "Music",
       icon: "🎵",
       description: "I play several instruments and have studied Turkish folk and classical music, explored harmony, and even taught music during university.",
-      tags: ["Turkish Folk Music", "Classical Music"]
     },
     {
       title: "Running",
       icon: "🏃",
       description: "Passionate about running and staying active, enjoying the mental clarity and physical challenge it brings.",
-      tags: ["Fitness", "Endurance", "Outdoor Activities"]
     },
   ]
 
@@ -44,16 +41,6 @@ export function HobbiesSection() {
                 <p className="text-sm text-neutral-600 dark:text-neutral-400 leading-relaxed mb-3">
                   {hobby.description}
                 </p>
-                <div className="flex flex-wrap gap-2">
-                  {hobby.tags.map((tag, tagIndex) => (
-                    <span
-                      key={tagIndex}
-                      className="px-2.5 py-1 text-xs font-medium rounded-full bg-neutral-100 dark:bg-neutral-800 text-neutral-700 dark:text-neutral-300 border border-neutral-200 dark:border-neutral-700"
-                    >
-                      {tag}
-                    </span>
-                  ))}
-                </div>
               </div>
             </div>
           </div>

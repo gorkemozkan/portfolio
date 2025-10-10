@@ -23,7 +23,7 @@ export function HeroSection() {
           </h1>
           <p className="text-neutral-800 dark:text-neutral-200 leading-relaxed">
             Software Developer focused on building web and mobile applications. 
-            Experienced in creating component-driven interfaces with attention to performance, accessibility, and responsive design. 
+            Experienced in creating component-driven interfaces with attention to performance, accessibility.
           </p>
         </div>
       </div>

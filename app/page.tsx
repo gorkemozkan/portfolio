@@ -10,7 +10,6 @@ export default function Page() {
       <HeroSection />
       <ExperienceTimeline />
       <BlogPosts />
-      <HobbiesSection />
     </div>
   )
 }
