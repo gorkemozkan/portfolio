@@ -2,9 +2,9 @@ import { OptimizedImage } from './OptimizedImage'
 
 export function HeroSection() {
   return (
-    <>
+    <section aria-labelledby="hero-heading">
       <div className="flex items-start gap-6 mb-8">
-        <div className="flex-shrink-0">
+        <div className="flex-shrink-0 hidden lg:block">
           <OptimizedImage
             src="https://media.licdn.com/dms/image/v2/D4D03AQGtAyc_Z-9XUg/profile-displayphoto-scale_400_400/B4DZlCQgnEGsAg-/0/1757753249059?e=1762992000&v=beta&t=_orskxS4mPut7YzBZCq98m7JCR653LamKeAqxAmUGYw"
             alt="Görkem Özkan"
@@ -18,7 +18,7 @@ export function HeroSection() {
           />
         </div>
         <div className="flex-1">
-          <h1 className="mb-2 text-2xl lg:text-3xl font-bold">
+          <h1 id="hero-heading" className="mb-2 text-2xl lg:text-3xl font-bold">
             Görkem Özkan
           </h1>
           <p className="text-neutral-800 dark:text-neutral-200 leading-relaxed">
@@ -27,6 +27,6 @@ export function HeroSection() {
           </p>
         </div>
       </div>
-    </>
+    </section>
   )
 }

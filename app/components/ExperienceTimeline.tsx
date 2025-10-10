@@ -60,8 +60,8 @@ export function ExperienceTimeline() {
   const [expandedIndex, setExpandedIndex] = useState<number | null>(0)
 
   return (
-    <div >
-      <SectionTitle title="Experiences" />
+    <section aria-labelledby="experiences">
+      <SectionTitle title="Experiences" id="experiences" />
       <div className="relative">
         <div className="absolute left-[7px] top-3 bottom-3 w-[2px] bg-gradient-to-b from-neutral-300 via-neutral-200 to-neutral-100 dark:from-neutral-700 dark:via-neutral-800 dark:to-neutral-900" />
         <div className="space-y-6">
@@ -91,8 +91,7 @@ export function ExperienceTimeline() {
                   isFirst 
                     ? 'bg-gradient-to-br from-blue-50 via-indigo-50/50 to-purple-50/30 dark:from-blue-950/30 dark:via-indigo-950/20 dark:to-purple-950/10 border-blue-400 dark:border-blue-700 hover:border-blue-500 dark:hover:border-blue-600 shadow-xl shadow-blue-500/20 hover:shadow-2xl hover:shadow-blue-500/30' 
                     : 'bg-neutral-50 dark:bg-neutral-900 border-neutral-100 dark:border-neutral-800 hover:border-neutral-100 dark:hover:border-neutral-700'
-                } ${exp.description.length > 0 ? 'hover:border-neutral-500 hover:shadow-neutral-500/20 cursor-pointer' : ''}`}
-                onClick={() => setExpandedIndex(expandedIndex === index ? null : index)}
+                } ${exp.description.length > 0 ? 'hover:border-neutral-200' : ''}`}
               >
               
                 <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-2 mb-2">
@@ -119,24 +118,24 @@ export function ExperienceTimeline() {
                     </div>
                   </div>
                   <div className="flex items-center gap-2">
-                    <span className="text-xs px-2 py-1 rounded-full bg-neutral-200 dark:bg-neutral-800 text-neutral-600 dark:text-neutral-400 whitespace-nowrap">
+                    <span className="text-xs px-2 py-1 rounded-full bg-neutral-100 border border-neutral-200 dark:border-neutral-800 dark:bg-neutral-800 text-neutral-600 dark:text-neutral-400 whitespace-nowrap">
                       {exp.period.split(' (')[0]}
                     </span>
                   </div>
                 </div>
                 <div className="flex flex-wrap items-center gap-3 text-xs text-neutral-600 dark:text-neutral-400 mb-3">
                   <div className="flex items-center gap-1">
-                    <svg className="w-3 h-3" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <svg className="w-3 h-3" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
                     </svg>
-                    {exp.location}
+                    <span>{exp.location}</span>
                   </div>
                   <div className="flex items-center gap-1">
-                    <svg className="w-3 h-3" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <svg className="w-3 h-3" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
                     </svg>
-                    {exp.period.match(/\((.*?)\)/)?.[1] || exp.period}
+                    <span>{exp.period.match(/\((.*?)\)/)?.[1] || exp.period}</span>
                   </div>
                 </div>
                 <div 
@@ -150,7 +149,9 @@ export function ExperienceTimeline() {
                 </div>
                 {exp.description.length > 0 && <button 
                   className="flex items-center gap-1 text-xs text-neutral-500 dark:text-neutral-400 hover:text-neutral-700 dark:hover:text-neutral-200 transition-colors mt-2"
-                  aria-label={expandedIndex === index ? 'Show less' : 'Show more'}
+                  onClick={() => setExpandedIndex(expandedIndex === index ? null : index)}
+                  aria-expanded={expandedIndex === index}
+                  aria-label={expandedIndex === index ? `Collapse ${exp.company} experience details` : `Expand ${exp.company} experience details`}
                 >
                   <span>{expandedIndex === index ? 'Show less' : 'Show more'}</span>
                   <svg 
@@ -158,6 +159,7 @@ export function ExperienceTimeline() {
                     fill="none" 
                     viewBox="0 0 24 24" 
                     stroke="currentColor"
+                    aria-hidden="true"
                   >
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
                   </svg>
@@ -167,7 +169,7 @@ export function ExperienceTimeline() {
           )})}
         </div>
       </div>
-    </div>
+    </section>
   )
 }
 

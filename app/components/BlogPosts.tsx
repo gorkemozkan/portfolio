@@ -10,8 +10,8 @@ export function BlogPosts() {
   }
 
   return (
-    <section aria-labelledby="recent-posts-heading">
-      <SectionTitle title="Recent Posts" />
+    <section aria-labelledby="recent-posts">
+      <SectionTitle title="Recent Posts" id="recent-posts" />
       <div className="space-y-4">
         {posts.map((post, index) => (
           <BlogPostCard key={post.slug} post={post} isLatest={index === 0} />
@@ -63,9 +63,9 @@ function BlogPostCard({ post, isLatest }: { post: BlogPostMetadata; isLatest?: b
             </div>
           )}
           
-          <span className="text-xs text-neutral-500 dark:text-neutral-500 ml-auto">
+          <time dateTime={post.date} className="text-xs text-neutral-500 dark:text-neutral-500 ml-auto">
             {post.readingTime}
-          </span>
+          </time>
         </div>
       </Link>
     </article>

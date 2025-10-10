@@ -51,9 +51,9 @@ export function SkillsSection() {
   const displayedSkills = isExpanded ? allSkills : allSkills.slice(0, 4)
 
   return (
-    <div className="mb-10">
+    <section aria-labelledby="core-skills" className="mb-10">
       <div className="flex items-center justify-between mb-5">
-        <h2 className="text-xl font-semibold text-neutral-900 dark:text-neutral-100">
+        <h2 id="core-skills" className="text-xl font-semibold text-neutral-900 dark:text-neutral-100">
           Core Skills
         </h2>
         <button
@@ -68,6 +68,7 @@ export function SkillsSection() {
             fill="none"
             viewBox="0 0 24 24"
             stroke="currentColor"
+            aria-hidden="true"
           >
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
           </svg>
@@ -97,6 +98,6 @@ export function SkillsSection() {
           </span>
         </div>
       )}
-    </div>
+    </section>
   )
 }

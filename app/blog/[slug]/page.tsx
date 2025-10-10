@@ -72,8 +72,43 @@ export default async function BlogPostPage({ params }: Props) {
     },
   })
 
+
+  const articleSchema = {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "headline": post.title,
+    "description": post.description,
+    "url": `${baseUrl}/blog/${post.slug}`,
+    "datePublished": post.date,
+    "dateModified": post.date,
+    "author": {
+      "@type": "Person",
+      "name": post.author || "Görkem Özkan",
+      "url": baseUrl
+    },
+    "publisher": {
+      "@type": "Person",
+      "name": "Görkem Özkan",
+      "url": baseUrl
+    },
+    "keywords": post.tags?.join(', ') || '',
+    "articleSection": "Technology",
+    "inLanguage": "en-US",
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": `${baseUrl}/blog/${post.slug}`
+    }
+  }
+
   return (
-    <article className="prose prose-neutral dark:prose-invert max-w-none">
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(articleSchema)
+        }}
+      />
+      <article className="prose prose-neutral dark:prose-invert max-w-none">
       <div className="mb-8">
         <Link
           href="/blog"
@@ -129,6 +164,7 @@ export default async function BlogPostPage({ params }: Props) {
         </Link>
       </div>
     </article>
+    </>
   )
 }
 

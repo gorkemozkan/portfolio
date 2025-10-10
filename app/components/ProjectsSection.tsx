@@ -1,6 +1,6 @@
 function ExternalLinkIcon() {
   return (
-    <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+    <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
     </svg>
   )
@@ -88,8 +88,8 @@ export function ProjectsSection() {
   ]
 
   return (
-    <div className="mb-8">
-      <h2 className="text-xl font-semibold mb-6">Featured Projects</h2>
+    <section aria-labelledby="featured-projects" className="mb-8">
+      <h2 id="featured-projects" className="text-xl font-semibold mb-6">Featured Projects</h2>
       <div className="grid grid-cols-1 gap-6">
         {projects.map((project, index) => (
           <ProjectCard key={index} {...project} />
@@ -109,6 +109,6 @@ export function ProjectsSection() {
           </a>
         </p>
       </div>
-    </div>
+    </section>
   )
 }

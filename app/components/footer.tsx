@@ -6,6 +6,7 @@ function ArrowIcon() {
       viewBox="0 0 12 12"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
+      aria-hidden="true"
     >
       <path
         d="M2.07102 11.3494L0.963068 10.2415L9.2017 1.98864H2.83807L2.85227 0.454545H11.8438V9.46023H10.2955L10.3097 3.09659L2.07102 11.3494Z"
@@ -21,7 +22,14 @@ export default function Footer() {
       <div className="mb-8">
         <h3 className="text-lg font-semibold mb-4">Get in Touch</h3>
         <div className="space-y-2 text-sm text-neutral-600 dark:text-neutral-400">
-          <p>📧 developer@ozgorkem.com</p>
+          <a 
+            href="mailto:developer@ozgorkem.com"
+            className="flex items-center gap-2 hover:text-neutral-800 dark:hover:text-neutral-100 transition-colors"
+            aria-label="Send email to developer@ozgorkem.com"
+          >
+            <span aria-hidden="true">📧</span>
+            <span>developer@ozgorkem.com</span>
+          </a>
         </div>
       </div>
 
@@ -32,6 +40,7 @@ export default function Footer() {
             rel="noopener noreferrer"
             target="_blank"
             href="https://github.com/gorkemozkan"
+            aria-label="Visit GitHub profile (opens in new tab)"
           >
             <ArrowIcon />
             <p className="ml-2 h-7">github</p>
@@ -43,6 +52,7 @@ export default function Footer() {
             rel="noopener noreferrer"
             target="_blank"
             href="https://linkedin.com/in/görkemözkan"
+            aria-label="Visit LinkedIn profile (opens in new tab)"
           >
             <ArrowIcon />
             <p className="ml-2 h-7">linkedin</p>

@@ -23,13 +23,10 @@ export default function BlogPage() {
   const posts = getAllPosts()
 
   return (
-    <section>
-      <h1 className="text-3xl font-bold mb-2 text-neutral-900 dark:text-neutral-100">
+    <section aria-labelledby="blog-heading">
+      <h1 id="blog-heading" className="text-3xl font-bold mb-2 text-neutral-900 dark:text-neutral-100">
         Blog
       </h1>
-      <p className="text-neutral-600 dark:text-neutral-400 mb-8">
-        Thoughts on software development, mobile apps, and web technologies.
-      </p>
       {posts.length === 0 ? (
         <div className="text-center py-12">
           <p className="text-neutral-600 dark:text-neutral-400">

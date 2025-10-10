@@ -22,8 +22,8 @@ export function HobbiesSection() {
   ]
 
   return (
-    <div>
-      <SectionTitle title="Beyond Code" />
+    <section aria-labelledby="beyond-code">
+      <SectionTitle title="Beyond Code" id="beyond-code" />
       <div className="grid grid-cols-1 gap-5">
         {hobbies.map((hobby, index) => (
           <div
@@ -31,7 +31,7 @@ export function HobbiesSection() {
             className="group p-6 rounded-lg border border-neutral-200 dark:border-neutral-800 hover:border-neutral-300 dark:hover:border-neutral-700 transition-all duration-300 hover:shadow-lg dark:hover:shadow-neutral-900/30"
           >
             <div className="flex items-start gap-4">
-              <div className="text-4xl">
+              <div className="text-4xl" role="img" aria-label={hobby.title}>
                 {hobby.icon}
               </div>
               <div className="flex-1">
@@ -46,7 +46,7 @@ export function HobbiesSection() {
           </div>
         ))}
       </div>
-    </div>
+    </section>
   )
 }
 

@@ -24,10 +24,9 @@ export function Navbar() {
         <nav
           id="navigation"
           className="flex flex-row items-start relative px-0 pb-0 fade md:overflow-auto scroll-pr-6 md:relative"
-          role="navigation"
           aria-label="Main navigation"
         >
-          <div className="flex flex-row flex-wrap items-center gap-2" role="menubar">
+          <div className="flex flex-row flex-wrap items-center gap-2">
             {Object.entries(navItems).map(([path, { name }]) => {
               const isExternal = path.startsWith('http') || path.startsWith('mailto:')
               const isMailto = path.startsWith('mailto:')
@@ -37,7 +36,6 @@ export function Navbar() {
                   key={path}
                   href={path}
                   className="group relative inline-flex items-center gap-2 px-4 py-2 rounded-lg overflow-hidden transition-all duration-300  hover:shadow-md "
-                  role="menuitem"
                   aria-label={isMailto ? `Send email to ${name}` : isExternal ? `Visit ${name} (opens in new tab)` : `Navigate to ${name}`}
                   {...(isExternal && !isMailto ? { target: '_blank', rel: 'noopener noreferrer' } : {})}
                 >
@@ -56,6 +54,7 @@ export function Navbar() {
                       fill="none" 
                       viewBox="0 0 24 24" 
                       stroke="currentColor"
+                      aria-hidden="true"
                     >
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
                     </svg>
