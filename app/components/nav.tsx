@@ -8,12 +8,6 @@ const navItems = {
     name: 'blog',
    
   },
-  'https://github.com/gorkemozkan': {
-    name: 'github',
-  },
-  'https://linkedin.com/in/görkemözkan': {
-    name: 'linkedin',
-  },
 }
 
 export function Navbar() {
