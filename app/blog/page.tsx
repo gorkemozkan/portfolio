@@ -24,7 +24,7 @@ export default function BlogPage() {
 
   return (
     <section aria-labelledby="blog-heading">
-      <h1 id="blog-heading" className="text-3xl font-bold mb-2 text-neutral-900 dark:text-neutral-100">
+      <h1 id="blog-heading" className="text-3xl font-bold mb-6 text-neutral-900 dark:text-neutral-100">
         Blog
       </h1>
       {posts.length === 0 ? (
