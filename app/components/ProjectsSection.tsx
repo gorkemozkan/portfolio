@@ -98,7 +98,7 @@ export function ProjectsSection() {
   const projects = [
 
     {
-      title: "Earthquake Crawler",
+      title: "Earthquake Scrapper",
       description: "A modular TypeScript application for crawling, filtering, and reporting earthquake data from Kandilli Observatory (KOERI). Features a layered architecture with flexible filtering by province, location keywords, magnitude, depth, and date ranges. Outputs comprehensive reports in both JSON and Markdown formats.",
       features: [
         "Layered architecture with service-based design pattern",
@@ -109,7 +109,7 @@ export function ProjectsSection() {
         { name: "TypeScript", color: "bg-green-100 text-green-800 dark:bg-green-900 dark:text-green-200" },
         { name: "Node.js", color: "bg-emerald-100 text-emerald-800 dark:bg-emerald-900 dark:text-emerald-200" },
       ],
-      link: "https://github.com/gorkemozkan/earthquake-crawler",
+      link: "https://github.com/gorkemozkan/earthquake-scraper",
       status: "Active"
     }
   ]
