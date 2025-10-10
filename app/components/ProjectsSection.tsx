@@ -99,7 +99,7 @@ export function ProjectsSection() {
 
     {
       title: "Earthquake Scraper",
-      description: "A modular TypeScript application for crawling, filtering, and reporting earthquake data from Kandilli Observatory (KOERI). Features a layered architecture with flexible filtering by province, location keywords, magnitude, depth, and date ranges. Outputs comprehensive reports in both JSON and Markdown formats.",
+      description: "A tool for scraping and filtering earthquake data from KOERI with customizable criteria and export to JSON and Markdown formats.",
       features: [
         "Layered architecture with service-based design pattern",
         "Flexible multi-criteria filtering (province, keywords, magnitude, depth, date)",
