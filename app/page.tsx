@@ -1,8 +1,6 @@
-import { HeroSection } from './components/HeroSection'
-import { SkillsSection } from './components/SkillsSection'
-import { ExperienceTimeline } from './components/ExperienceTimeline'
-import { BlogPosts } from './components/BlogPosts'
-import { HobbiesSection } from './components/HobbiesSection'
+import { HeroSection } from '@/app/components/HeroSection'
+import { ExperienceTimeline } from '@/app/components/ExperienceTimeline'
+import { BlogPosts } from '@/app/components/BlogPosts'
 
 export default function Page() {
   return (

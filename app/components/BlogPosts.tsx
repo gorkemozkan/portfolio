@@ -2,19 +2,32 @@ import Link from 'next/link'
 import { getAllPosts, BlogPostMetadata } from '@/lib/blog/mdx'
 import SectionTitle from './SectionTitle'
 
-export function BlogPosts() {
-  const posts = getAllPosts().slice(0, 3)
+interface BlogPostsProps {
+  limit?: number
+  showTitle?: boolean
+  title?: string
+  titleId?: string
+}
+
+export function BlogPosts({ 
+  limit = 3, 
+  showTitle = true, 
+  title = 'Recent Posts',
+  titleId = 'recent-posts'
+}: BlogPostsProps = {}) {
+  const allPosts = getAllPosts()
+  const posts = limit ? allPosts.slice(0, limit) : allPosts
 
   if (posts.length === 0) {
     return null
   }
 
   return (
-    <section aria-labelledby="recent-posts">
-      <SectionTitle title="Recent Posts" id="recent-posts" />
+    <section aria-labelledby={showTitle ? titleId : undefined}>
+      {showTitle && <SectionTitle title={title} id={titleId} />}
       <div className="space-y-4">
         {posts.map((post, index) => (
-          <BlogPostCard key={post.slug} post={post} isLatest={index === 0} />
+          <BlogPostCard key={post.slug} post={post} isLatest={index === 0 && limit === 3} />
         ))}
       </div>
     </section>

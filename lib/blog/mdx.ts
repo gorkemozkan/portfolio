@@ -6,6 +6,25 @@ import { format, parseISO } from 'date-fns'
 
 const BLOG_PATH = path.join(process.cwd(), 'content/blog')
 
+    
+function isValidSlug(slug: string): boolean {
+  const slugRegex = /^[a-zA-Z0-9_-]+$/
+  
+  if (slug.includes('..') || slug.includes('/') || slug.includes('\\')) {
+    return false
+  }
+  
+  if (!slugRegex.test(slug)) {
+    return false
+  }
+  
+  if (slug.length > 200) {
+    return false
+  }
+  
+  return true
+}
+
 export type BlogPost = {
   slug: string
   title: string
@@ -75,7 +94,18 @@ export function getAllPosts(): BlogPostMetadata[] {
 
 export function getPostBySlug(slug: string): BlogPost | null {
   try {
+    if (!isValidSlug(slug)) {
+      return null
+    }
+    
     const filePath = path.join(BLOG_PATH, `${slug}.mdx`)
+    
+    const resolvedPath = path.resolve(filePath)
+    const resolvedBlogPath = path.resolve(BLOG_PATH)
+    
+    if (!resolvedPath.startsWith(resolvedBlogPath)) {
+      return null
+    }
     
     if (!fs.existsSync(filePath)) {
       return null
@@ -98,7 +128,6 @@ export function getPostBySlug(slug: string): BlogPost | null {
       content,
     }
   } catch (error) {
-    console.error(`Error reading post ${slug}:`, error)
     return null
   }
 }

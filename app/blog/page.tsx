@@ -1,6 +1,6 @@
 import { Metadata } from 'next'
-import { getAllPosts } from '@/lib/blog/mdx'
-import { BlogCard } from '@/app/components/BlogCard'
+import { BlogPosts } from '@/app/components/BlogPosts'
+import { BackButton } from '@/app/components/BackButton'
 import { baseUrl } from '@/app/sitemap'
 
 export const metadata: Metadata = {
@@ -18,28 +18,15 @@ export const metadata: Metadata = {
     type: 'website',
   },
 }
-
+    
 export default function BlogPage() {
-  const posts = getAllPosts()
-
   return (
     <section aria-labelledby="blog-heading">
+      <BackButton />
       <h1 id="blog-heading" className="text-3xl font-bold mb-6 text-neutral-900 dark:text-neutral-100">
         Blog
       </h1>
-      {posts.length === 0 ? (
-        <div className="text-center py-12">
-          <p className="text-neutral-600 dark:text-neutral-400">
-            No blog posts yet. Check back soon!
-          </p>
-        </div>
-      ) : (
-        <div className="space-y-4">
-          {posts.map((post) => (
-            <BlogCard key={post.slug} post={post} />
-          ))}
-        </div>
-      )}
+      <BlogPosts limit={0} showTitle={false} />
     </section>
   )
 }
