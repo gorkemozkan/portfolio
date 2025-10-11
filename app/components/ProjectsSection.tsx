@@ -120,7 +120,7 @@ export function ProjectsSection() {
   const projects = [
 
     {
-      title: "Earthquake Scraper",
+      title: "KOERI Scraper",
       description: "A tool for scraping and filtering earthquake data from KOERI with customizable criteria and export to JSON and Markdown formats.",
       features: [
         "Layered architecture with service-based design pattern",
@@ -131,8 +131,8 @@ export function ProjectsSection() {
         { name: "TypeScript", color: "bg-green-100 text-green-800 dark:bg-green-900 dark:text-green-200" },
         { name: "Node.js", color: "bg-emerald-100 text-emerald-800 dark:bg-emerald-900 dark:text-emerald-200" },
       ],
-      link: "https://github.com/gorkemozkan/earthquake-scraper",
-      npmLink: "https://www.npmjs.com/package/earthquake-scraper",
+      link: "https://github.com/gorkemozkan/koeri-scraper",
+      npmLink: "https://www.npmjs.com/package/koeri-scraper",
       status: "Active"
     }
   ]
